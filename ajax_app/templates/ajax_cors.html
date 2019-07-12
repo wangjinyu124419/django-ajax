@@ -8,11 +8,25 @@
     <script>
         $(document).ready(function(){
 
-            $.ajax({url:"http://localhost:8888/",success:function(result){
-                    // $.ajax({url:"https://pps-cms.lcxtest.org/",success:function(result){
-                    // alert(result.valueOf())
-                    $("#div1").html(result);
-                }});
+            {#$.ajax({url:"http://localhost:8001/",success:function(result){#}
+            {#        // $.ajax({url:"https://pps-cms.lcxtest.org/",success:function(result){#}
+            {#        // alert(result.valueOf())#}
+            {#        $("#div1").html(result);#}
+            {#    }});#}
+
+
+            {#$.get("http://localhost:8001/",function(result){#}
+            {#            alert(result.valueOf());#}
+                        {#$("#div1").html(result);#}
+            {#    });#}
+
+
+            $.post("http://localhost:8001/",
+              function(result,status){
+                 {#alert(result.valueOf());#}
+                 alert(status);
+              });
+
             // $("button").click(function(){
             //     $.ajax({url:"http://localhost:8001/",success:function(result){
             //     // $.ajax({url:"https://pps-cms.lcxtest.org/",success:function(result){
@@ -25,8 +39,8 @@
 </head>
 <body>
 
-<div id="div1"><h2>使用 jQuery AJAX 修改文本内容</h2></div>
-<button>获取其他内容</button>
+<div id="div1"><h2> jQuery AJAX </h2></div>
+<button>mybutton</button>
 
 </body>
 </html>
